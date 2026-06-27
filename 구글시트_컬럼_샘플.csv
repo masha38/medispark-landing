@@ -1,0 +1,3 @@
+submittedAt,name,phone,developerName,pageName,leadType,interestType,consultType,inflowSource,deviceType,userAgent
+2026-06-27 15:40:00,홍길동,010-1234-5678,장문희,메디스파크 랜딩페이지,상담하기,84A,전화상담,direct,mobile,Mozilla/5.0
+2026-06-27 15:42:10,김민지,010-9876-5432,장문희,메디스파크 랜딩페이지,방문예약,101,방문예약,kakao,desktop,Mozilla/5.0

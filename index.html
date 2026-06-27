@@ -1,0 +1,1808 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self' data: blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://script.google.com https://script.googleusercontent.com; base-uri 'self'; form-action 'self' https://script.google.com https://script.googleusercontent.com"
+  />
+  <title>브레인시티 메디스파크 | 프리미엄 분양 상담</title>
+  <meta
+    name="description"
+    content="브레인시티 메디스파크 로제비앙 모아엘가 프리미엄 분양 상담 페이지. 교육, 의료, 공원, 상업 인프라를 가까이 누리는 브레인시티 핵심 입지를 도시적인 감성으로 만나보세요."
+  />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="브레인시티 메디스파크 | 프리미엄 분양 상담" />
+  <meta property="og:description" content="브레인시티 메디스파크 로제비앙 모아엘가 프리미엄 분양 상담 페이지. 교육, 의료, 공원, 상업 인프라를 가까이 누리는 브레인시티 핵심 입지를 만나보세요." />
+  <meta property="og:image" content="./hero_render/hero_render.jpg" />
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --bg-soft: #eef3f7;
+      --paper: rgba(255, 255, 255, 0.86);
+      --card: #ffffff;
+      --ink: #122238;
+      --ink-soft: #5c6e80;
+      --line: rgba(18, 34, 56, 0.09);
+      --brand: #2f7695;
+      --brand-deep: #173e5b;
+      --accent: #d1a96d;
+      --accent-soft: #f4eadb;
+      --mint: #dff0ec;
+      --shadow-xl: 0 36px 80px rgba(26, 45, 70, 0.12);
+      --shadow-lg: 0 22px 50px rgba(26, 45, 70, 0.08);
+      --shadow-md: 0 14px 30px rgba(26, 45, 70, 0.06);
+      --radius-2xl: 36px;
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --content: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47, 118, 149, 0.13), transparent 28%),
+        radial-gradient(circle at 90% 0%, rgba(209, 169, 109, 0.12), transparent 22%),
+        linear-gradient(180deg, #f8fbfd 0%, #f4f7fa 44%, #eff4f8 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--content));
+      margin: 0 auto;
+    }
+
+    .site-shell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-shell::before,
+    .site-shell::after {
+      content: "";
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(18px);
+      opacity: 0.55;
+      z-index: 0;
+    }
+
+    .site-shell::before {
+      top: -120px;
+      left: -120px;
+      background: radial-gradient(circle, rgba(47, 118, 149, 0.15), transparent 65%);
+    }
+
+    .site-shell::after {
+      right: -140px;
+      top: 180px;
+      background: radial-gradient(circle, rgba(209, 169, 109, 0.15), transparent 68%);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: rgba(248, 251, 253, 0.8);
+      border-bottom: 1px solid rgba(18, 34, 56, 0.05);
+    }
+
+    .topbar-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      min-height: 34px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(209, 169, 109, 0.12);
+      color: #946a32;
+      border: 1px solid rgba(209, 169, 109, 0.18);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .brand-copy {
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .cta-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .cta-duo .btn {
+      width: 100%;
+    }
+
+    .phone-chip,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+    }
+
+    .phone-chip {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(18, 34, 56, 0.08);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .phone-chip:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+      box-shadow: 0 18px 36px rgba(23, 62, 91, 0.2);
+    }
+
+    .btn-light {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(18, 34, 56, 0.08);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      color: var(--brand-deep);
+      background: transparent;
+      border: 1px solid rgba(23, 62, 91, 0.16);
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 34px 0 40px;
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border-radius: 40px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.94));
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow-xl);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(360px, 400px);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-visual {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 22px;
+      min-height: 760px;
+      position: relative;
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto auto 16px 18px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.42), transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-intro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-tag {
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(18, 34, 56, 0.08);
+      color: var(--brand-deep);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-stage {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      min-height: 480px;
+      background:
+        linear-gradient(180deg, rgba(20, 33, 49, 0.08) 0%, rgba(20, 33, 49, 0.18) 100%),
+        url("./hero_render/hero_render.jpg") center/cover no-repeat;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 40%),
+        linear-gradient(180deg, rgba(23, 62, 91, 0.02), rgba(23, 62, 91, 0.22));
+    }
+
+    .hero-stage-content {
+      position: absolute;
+      inset: auto 28px 28px 28px;
+      display: grid;
+      gap: 18px;
+      z-index: 1;
+    }
+
+    .hero-title {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(40px, 5vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+      color: #fff;
+      text-shadow: 0 10px 28px rgba(15, 26, 39, 0.2);
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: #f4dfbe;
+    }
+
+    .hero-lead {
+      max-width: 620px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .metric-card {
+      padding: 20px 20px 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.64);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(10px);
+    }
+
+    .metric-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 30px;
+      color: var(--brand-deep);
+      letter-spacing: -0.05em;
+    }
+
+    .metric-card span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .consult-card,
+    .mini-card {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 30px;
+      padding: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(14px);
+    }
+
+    .consult-card h2,
+    .mini-card h3 {
+      margin: 14px 0 10px;
+      font-size: 32px;
+      line-height: 1.12;
+      letter-spacing: -0.05em;
+    }
+
+    .card-copy {
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .trust-list {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0;
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #f7fafc;
+      border: 1px solid rgba(18, 34, 56, 0.06);
+    }
+
+    .trust-no {
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: #946a32;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .trust-row span:last-child {
+      color: #56687a;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .lead-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      font-size: 14px;
+      font-weight: 800;
+      color: #21354a;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      height: 56px;
+      border-radius: 16px;
+      border: 1px solid rgba(18, 34, 56, 0.1);
+      background: rgba(255, 255, 255, 0.98);
+      padding: 0 16px;
+      color: var(--ink);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+
+    .field input:focus,
+    .field select:focus {
+      outline: 2px solid rgba(47, 118, 149, 0.14);
+      border-color: rgba(47, 118, 149, 0.46);
+    }
+
+    .agreement {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #627385;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .agreement input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+    }
+
+    .status {
+      min-height: 22px;
+      color: var(--brand-deep);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .micro-note {
+      margin-top: 16px;
+      color: #6f7f8e;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .mini-card {
+      padding: 22px;
+    }
+
+    .mini-card ul {
+      display: grid;
+      gap: 8px;
+      list-style: none;
+      margin: 16px 0 0;
+      padding: 0;
+    }
+
+    .mini-card li {
+      color: #576878;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding-bottom: 120px;
+    }
+
+    section.block {
+      padding: 92px 0 0;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--brand);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+    }
+
+    .section-desc {
+      max-width: 780px;
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .stat-card {
+      padding: 26px 24px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.76);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: clamp(26px, 3vw, 42px);
+      color: var(--brand-deep);
+      letter-spacing: -0.05em;
+    }
+
+    .stat-card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .visual-card,
+    .content-card,
+    .image-panel,
+    .unit-image,
+    .unit-copy,
+    .summary-card,
+    .final-form-card,
+    .vision-card,
+    .vision-copy {
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    .visual-card img,
+    .vision-card img,
+    .summary-card img,
+    .image-panel img,
+    .unit-image img {
+      object-fit: cover;
+    }
+
+    .visual-card img {
+      aspect-ratio: 1 / 1;
+    }
+
+    .content-card,
+    .vision-copy,
+    .summary-copy,
+    .final-form-body,
+    .unit-copy,
+    .image-caption {
+      padding: 30px;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .bullet-item {
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(247, 250, 252, 0.96);
+      border: 1px solid rgba(18, 34, 56, 0.06);
+    }
+
+    .bullet-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 21px;
+      letter-spacing: -0.03em;
+    }
+
+    .bullet-item p {
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .image-panel img {
+      aspect-ratio: 16 / 11;
+    }
+
+    .image-caption h3 {
+      margin: 0 0 10px;
+      font-size: 26px;
+      letter-spacing: -0.04em;
+    }
+
+    .image-caption p {
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .feature-card {
+      padding: 24px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(23, 62, 91, 0.96), rgba(27, 76, 109, 0.98));
+      color: #eef6fb;
+      box-shadow: 0 26px 50px rgba(23, 62, 91, 0.16);
+    }
+
+    .feature-card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      color: #fff;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: rgba(238, 246, 251, 0.8);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .unit-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .unit-tab {
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(18, 34, 56, 0.08);
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+    }
+
+    .unit-tab.active {
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+      border-color: transparent;
+    }
+
+    .unit-panel {
+      display: none;
+      grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+      gap: 22px;
+    }
+
+    .unit-panel.active {
+      display: grid;
+    }
+
+    .unit-image img {
+      aspect-ratio: 16 / 12;
+    }
+
+    .unit-copy h3,
+    .summary-copy h3,
+    .final-form-body h3,
+    .vision-copy h2 {
+      margin: 0 0 12px;
+      font-size: 34px;
+      letter-spacing: -0.05em;
+      line-height: 1.12;
+    }
+
+    .unit-copy p,
+    .summary-copy p,
+    .vision-copy p {
+      margin: 0 0 18px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .chip {
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(223, 240, 236, 0.82);
+      color: #1b6655;
+      display: inline-flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .unit-list,
+    .summary-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .unit-list li,
+    .summary-list li {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(247, 250, 252, 0.96);
+      color: #4c5f71;
+      line-height: 1.65;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+      gap: 22px;
+    }
+
+    .vision-card img {
+      aspect-ratio: 16 / 12;
+    }
+
+    .vision-copy {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(245, 249, 252, 0.96));
+    }
+
+    .vision-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .vision-metric {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(247, 250, 252, 0.96);
+      border: 1px solid rgba(18, 34, 56, 0.06);
+    }
+
+    .vision-metric strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 28px;
+      color: var(--brand-deep);
+      letter-spacing: -0.05em;
+    }
+
+    .vision-metric span {
+      color: var(--ink-soft);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .cta-band {
+      margin-top: 26px;
+      padding: 30px;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.9)),
+        #fff;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-band h3 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+    }
+
+    .cta-band p {
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.8;
+    }
+
+    .final-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.96fr) minmax(340px, 0.84fr);
+      gap: 22px;
+    }
+
+    .summary-card img {
+      aspect-ratio: 16 / 10;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      color: #708293;
+      line-height: 1.75;
+      font-size: 12px;
+    }
+
+    .floating-bar {
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      width: min(calc(100% - 16px), 760px);
+      padding: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 40px rgba(25, 40, 58, 0.14);
+      z-index: 45;
+    }
+
+    .floating-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(18, 34, 56, 0.34);
+      backdrop-filter: blur(8px);
+      z-index: 60;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-card {
+      width: min(100%, 470px);
+      border-radius: 34px;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-xl);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: #eef3f7;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .modal-card h3 {
+      margin: 12px 0 10px;
+      font-size: 30px;
+      letter-spacing: -0.05em;
+    }
+
+    .modal-card p {
+      margin: 0 0 18px;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .split-grid,
+      .vision-grid,
+      .final-grid,
+      .unit-panel,
+      .cta-band {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid,
+      .feature-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner {
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .topbar-actions,
+      .phone-chip,
+      .topbar-actions .btn,
+      .cta-duo {
+        width: 100%;
+      }
+
+      .phone-chip,
+      .topbar-actions .btn {
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 18px;
+      }
+
+      .hero-panel,
+      .content-card,
+      .consult-card,
+      .mini-card,
+      .unit-copy,
+      .image-caption,
+      .summary-copy,
+      .final-form-body,
+      .vision-copy,
+      .modal-card {
+        padding: 22px;
+      }
+
+      .hero-panel {
+        padding: 18px;
+      }
+
+      .hero-stage {
+        min-height: 430px;
+      }
+
+      .hero-title {
+        font-size: 40px;
+      }
+
+      .hero-metrics,
+      .stats-grid,
+      .feature-row,
+      .vision-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-bar {
+        bottom: 10px;
+      }
+
+      .floating-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand-meta">
+          <span class="eyebrow">Brain City Medispark</span>
+          <h1 class="brand-title">브레인시티 메디스파크 로제비앙 모아엘가</h1>
+          <div class="brand-copy">밝고 세련된 도시형 프리미엄 라이프를 위한 분양 상담 랜딩페이지</div>
+        </div>
+        <div class="topbar-actions">
+          <a class="phone-chip" href="tel:01048961691">대표번호 010-4896-1691</a>
+          <div class="cta-duo">
+            <button class="btn btn-light open-consult" type="button" data-lead-type="상담신청">상담신청</button>
+            <button class="btn btn-primary open-consult" type="button" data-lead-type="방문예약">방문예약</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-panel">
+        <div class="hero-grid">
+          <div class="hero-visual">
+            <div class="hero-intro">
+              <span class="hero-tag">선착순 동호지정 상담</span>
+              <span class="hero-tag">방문예약 고객 우선 안내</span>
+              <span class="hero-tag">도시형 프리미엄 주거</span>
+            </div>
+
+            <div class="hero-stage">
+              <div class="hero-stage-content">
+                <h2 class="hero-title">
+                  브레인시티의 중심에서<br />
+                  <em>메디컬 프리미엄 라이프</em><br />
+                  를 선점하다
+                </h2>
+                <p class="hero-lead">
+                  아주대병원, 초중학교, 중심상업지, 대규모 공원을 가까이 누리고
+                  메디스파크 비전과 함께 미래가치를 기대할 수 있는
+                  1,215세대 프리미엄 대단지를 보다 고급스럽고 선명하게 소개합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-side">
+            <div class="consult-card">
+              <span class="eyebrow">Simple Consult Flow</span>
+              <h2>이름과 연락처만 남기면 바로 상담 접수</h2>
+              <p class="card-copy">
+                불필요한 입력을 줄이고 가독성을 높였습니다. 상담 접수를 위한 최소 정보만 받기 때문에
+                거부감 없이 빠르게 문의하실 수 있습니다.
+              </p>
+ 
+              <div class="trust-list">
+                <div class="trust-row">
+                  <span class="trust-no">01</span>
+                  <span>입력한 정보는 상담 안내 외 다른 용도로 사용되지 않습니다.</span>
+                </div>
+                <div class="trust-row">
+                  <span class="trust-no">02</span>
+                  <span>접수된 정보는 상담 담당자에게 안전하게 전달되며 상담 안내에만 사용됩니다.</span>
+                </div>
+                <div class="trust-row">
+                  <span class="trust-no">03</span>
+                  <span>관심 타입이 아직 정해지지 않았어도 먼저 상담을 받아보실 수 있습니다.</span>
+                </div>
+              </div>
+ 
+              <form class="lead-form js-lead-form" data-lead-type="상담신청">
+                <div class="field">
+                  <label for="hero-name">이름</label>
+                  <input id="hero-name" name="name" type="text" placeholder="성함을 입력해주세요" autocomplete="name" maxlength="20" required />
+                </div>
+                <div class="field">
+                  <label for="hero-phone">연락처</label>
+                  <input id="hero-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="13" placeholder="010-1234-5678" required />
+                </div>
+                <div class="field">
+                  <label for="hero-interest">관심 타입</label>
+                  <select id="hero-interest" name="interestType">
+                    <option value="">관심 타입 선택</option>
+                    <option value="84A">84A</option>
+                    <option value="84B">84B</option>
+                    <option value="101">101</option>
+                    <option value="미정">아직 미정</option>
+                  </select>
+                </div>
+                <div class="hp-field" aria-hidden="true">
+                  <label for="hero-company">회사명</label>
+                  <input id="hero-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+                <label class="agreement">
+                  <input type="checkbox" name="agree" required />
+                  <span>개인정보 수집 및 이용에 동의합니다. 상담 안내를 위한 최소 정보만 수집합니다.</span>
+                </label>
+                <button class="btn btn-primary" type="submit">상담신청</button>
+                <div class="status" aria-live="polite"></div>
+              </form>
+
+              <div class="hero-actions">
+                <button class="btn btn-outline open-consult" type="button" data-lead-type="상담신청">상담신청</button>
+                <button class="btn btn-light open-consult" type="button" data-lead-type="방문예약">방문예약</button>
+              </div>
+
+              <div class="micro-note">
+                대표번호 010-4896-1691<br />
+                방문예약 고객 대상으로 순차 상담을 도와드립니다.
+              </div>
+            </div>
+
+            <div class="mini-card">
+              <span class="eyebrow">Curated Value</span>
+              <h3>도시적이고 밝은 프리미엄 인상</h3>
+              <p class="card-copy">
+                차분한 화이트와 쿨 블루를 기본으로, 샌드 골드 포인트를 더해
+                의료·교육·자연의 프리미엄을 한층 정돈된 무드로 전달합니다.
+              </p>
+              <ul>
+                <li>정보가 많아도 숨이 트이는 여백 중심 편집</li>
+                <li>실수요자와 투자수요 모두 읽기 쉬운 카피 구조</li>
+                <li>상업용 랜딩페이지에 적합한 빠른 CTA 동선</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="block">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Core Premium</div>
+            <h2 class="section-title">한눈에 읽히는 핵심 가치로 설득력을 높입니다</h2>
+            <p class="section-desc">
+              랜딩페이지의 첫 인상은 복잡한 설명보다 명확한 숫자와 정돈된 정보 위계에서 나옵니다.
+              대단지 규모, 교육 접근성, 단지 쾌적성, 메디컬 미래가치를 카드형으로 빠르게 전달합니다.
+            </p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <strong>1,215</strong>
+              <h3>브랜드 대단지</h3>
+              <p>총 1,215세대의 대규모 단지가 주는 안정감과 상징성을 동시에 확보했습니다.</p>
+            </article>
+            <article class="stat-card">
+              <strong>1분</strong>
+              <h3>초중학교 도보권</h3>
+              <p>가족 중심 실거주 수요가 즉시 반응할 수 있는 교육 인프라 접근성이 강점입니다.</p>
+            </article>
+            <article class="stat-card">
+              <strong>129.1m</strong>
+              <h3>최대 동간거리</h3>
+              <p>남향 위주 배치와 넓은 동간거리로 개방감과 프라이버시를 함께 끌어올렸습니다.</p>
+            </article>
+            <article class="stat-card">
+              <strong>500병상</strong>
+              <h3>메디스파크 비전</h3>
+              <p>첨단 스마트 병원과 헬스케어 복합타운 스토리가 미래가치를 더욱 선명하게 만듭니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="container split-grid">
+          <div class="visual-card">
+            <img src="./hero_render/교육_9.jpg" alt="브레인시티 메디스파크 생활 인프라 위치도" />
+          </div>
+          <div class="content-card">
+            <div class="section-head">
+              <div class="section-kicker">Location</div>
+              <h2 class="section-title">학교, 병원, 상업, 공원이 가까운 생활 중심 입지</h2>
+              <p class="section-desc">
+                실거주 관점에서 가장 설득력 있는 포인트는 결국 매일 누릴 수 있는 생활 반경입니다.
+                메디스파크는 도시적 인프라와 녹지의 균형이 잘 잡힌 브레인시티 핵심 위치를 선점합니다.
+              </p>
+            </div>
+
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <strong>도보 1분 초중학교</strong>
+                <p>자녀 통학 동선을 짧게 만들고, 교육 환경을 중요하게 보는 실수요자에게 강한 확신을 줍니다.</p>
+              </li>
+              <li class="bullet-item">
+                <strong>도보 3분 아주대병원</strong>
+                <p>생활 속 의료 접근성을 넘어 메디컬 중심 입지라는 상징성까지 함께 형성합니다.</p>
+              </li>
+              <li class="bullet-item">
+                <strong>도보 5분 중심상업지</strong>
+                <p>일상 편의와 소비 인프라가 가까워 실제 거주 만족감이 빠르게 체감되는 구조입니다.</p>
+              </li>
+              <li class="bullet-item">
+                <strong>도보 1분 대규모 공원</strong>
+                <p>도시형 생활 속에서도 여유와 녹지를 누릴 수 있는 공원형 라이프를 구현합니다.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Mobility</div>
+            <h2 class="section-title">도로망과 철도망의 확장성이 미래 서사를 완성합니다</h2>
+            <p class="section-desc">
+              분양 랜딩페이지에서는 현재의 생활 가치와 함께 앞으로의 성장 동력을 어떻게 보여주느냐가 중요합니다.
+              메디스파크는 광역 이동성과 브레인시티 개발 흐름을 한 화면 안에서 직관적으로 전달할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="gallery-grid">
+            <article class="image-panel">
+              <img src="./hero_render/교육_7.jpg" alt="브레인시티 메디스파크 도로망 안내 이미지" />
+              <div class="image-caption">
+                <h3>풍부한 도로망과 높은 접근성</h3>
+                <p>동부화고속도로 2026년 9월 개통 예정, 국도와 고속도로 연결성, 산업축 접근성이 주변 수요를 더욱 넓혀줍니다.</p>
+              </div>
+            </article>
+            <article class="image-panel">
+              <img src="./hero_render/교육_8.jpg" alt="브레인시티 메디스파크 철도망 안내 이미지" />
+              <div class="image-caption">
+                <h3>광역 이동의 기대감까지 반영</h3>
+                <p>KTX, 지하철 1호선, SRT, GTX 예정 노선 등의 스토리는 실거주뿐 아니라 미래가치 수요에도 설득력을 더합니다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Master Plan</div>
+            <h2 class="section-title">공원형 스케일과 남향 위주 배치가 만드는 쾌적한 단지</h2>
+            <p class="section-desc">
+              프리미엄 이미지는 화려한 말보다 실제 설계 포인트에서 만들어집니다.
+              남향 위주 배치, 넓은 동간거리, 풍부한 조경, 다양한 커뮤니티를 편안한 여백 안에 정리했습니다.
+            </p>
+          </div>
+
+          <div class="split-grid">
+            <div class="visual-card">
+              <img src="./hero_render/교육_3.jpg" alt="브레인시티 메디스파크 단지 배치도" />
+            </div>
+            <div class="content-card">
+              <ul class="bullet-list">
+                <li class="bullet-item">
+                  <strong>전 세대 남향 위주 배치</strong>
+                  <p>풍부한 일조량과 시각적 안정감을 동시에 확보해 거주 만족도를 높이는 핵심 설계입니다.</p>
+                </li>
+                <li class="bullet-item">
+                  <strong>최대 129.1m 동간거리</strong>
+                  <p>시야 간섭을 줄이고 탁 트인 조망감을 확보해, 도시형 대단지에서도 한층 여유로운 인상을 줍니다.</p>
+                </li>
+                <li class="bullet-item">
+                  <strong>총 1만4천여 평 자연녹지</strong>
+                  <p>단지 내 조경과 단지 앞 근린공원이 어우러져 단순한 아파트를 넘어 공원형 라이프스타일을 제안합니다.</p>
+                </li>
+                <li class="bullet-item">
+                  <strong>다양한 커뮤니티 시설</strong>
+                  <p>운동, 교육, 휴식이 결합된 입주민 시설은 생활의 품격을 높이는 중요한 접점이 됩니다.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature-row">
+            <article class="feature-card">
+              <h3>최고의 평면구성</h3>
+              <p>실용적인 수납, 효율적인 동선, 조망과 채광까지 고려한 실거주형 평면 구성이 강점입니다.</p>
+            </article>
+            <article class="feature-card">
+              <h3>최적의 단지설계</h3>
+              <p>남향 중심 배치와 동간거리, 조경 설계가 어우러져 시각적으로도 여유로운 단지 인상을 만듭니다.</p>
+            </article>
+            <article class="feature-card">
+              <h3>도시형 커뮤니티</h3>
+              <p>실내외 활동, 가족 중심 생활, 휴식의 균형을 맞춘 커뮤니티 계획이 장기적인 만족도를 높입니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Unit Plan</div>
+            <h2 class="section-title">평면도조차 읽기 편하고 고급스럽게 보여주는 방식</h2>
+            <p class="section-desc">
+              정보가 많은 평면 섹션일수록 정돈된 탭 구조와 핵심 요약이 중요합니다.
+              대표 타입별 특징을 눈에 잘 들어오는 칩과 핵심 bullet 중심으로 구성했습니다.
+            </p>
+          </div>
+
+          <div class="unit-tabs" role="tablist" aria-label="평면 타입 선택">
+            <button class="unit-tab active" type="button" data-unit="84A">84A</button>
+            <button class="unit-tab" type="button" data-unit="84B">84B</button>
+            <button class="unit-tab" type="button" data-unit="101">101</button>
+          </div>
+
+          <div class="unit-panel active" data-panel="84A">
+            <div class="unit-image">
+              <img src="./hero_render/교육_4.jpg" alt="84A 타입 평면도" />
+            </div>
+            <div class="unit-copy">
+              <h3>84A 타입</h3>
+              <p>실수요 중심 분양에서 가장 폭넓게 반응하는 대표 타입으로, 수납과 동선, 개방감을 균형감 있게 담았습니다.</p>
+              <div class="chip-row">
+                <span class="chip">총 563세대</span>
+                <span class="chip">구 34.09평형</span>
+                <span class="chip">알파룸 제공</span>
+              </div>
+              <ul class="unit-list">
+                <li>D자형 주방 설계로 수납 효율과 사용 편의성을 함께 확보</li>
+                <li>거실과 주방의 맞통풍 구조로 쾌적한 환기 흐름 형성</li>
+                <li>알파룸, 드레스룸, 팬트리 구성으로 실거주 만족도 강화</li>
+                <li>가족 단위 거주를 고려한 가장 안정적인 대표 상품성</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="unit-panel" data-panel="84B">
+            <div class="unit-image">
+              <img src="./hero_render/교육_5.jpg" alt="84B 타입 평면도" />
+            </div>
+            <div class="unit-copy">
+              <h3>84B 타입</h3>
+              <p>공간의 독립성과 동선 효율을 함께 중시하는 수요에게 적합한 타입으로, 차별화된 평면 매력을 가집니다.</p>
+              <div class="chip-row">
+                <span class="chip">총 167세대</span>
+                <span class="chip">구 34.16평형</span>
+                <span class="chip">프라이빗 구조</span>
+              </div>
+              <ul class="unit-list">
+                <li>ㄱ자형 주방 구성으로 간결한 동선과 효율적인 활용감 제공</li>
+                <li>거실과 침실의 남향 위주 배치로 밝고 안정된 채광감 확보</li>
+                <li>침실1 독립감이 살아 있는 프라이빗한 생활 구조</li>
+                <li>팬트리와 드레스룸이 실용성을 높여주는 균형형 타입</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="unit-panel" data-panel="101">
+            <div class="unit-image">
+              <img src="./hero_render/교육_6.jpg" alt="101 타입 평면도" />
+            </div>
+            <div class="unit-copy">
+              <h3>101 타입</h3>
+              <p>넓은 공간감과 여유로운 수납, 상위 평형 선호층을 위한 품격 있는 라이프스타일 제안이 가능한 타입입니다.</p>
+              <div class="chip-row">
+                <span class="chip">총 333세대</span>
+                <span class="chip">구 40.68평형</span>
+                <span class="chip">대형 평형</span>
+              </div>
+              <ul class="unit-list">
+                <li>팬트리와 드레스룸, 알파룸 중심의 여유로운 공간 구성</li>
+                <li>D자형 주방과 넓은 실사용 면적으로 고급 수요층 대응</li>
+                <li>가족 라이프스타일 변화에 유연하게 대응 가능한 구조</li>
+                <li>단지 내 차별화된 상위 타입으로 프리미엄 이미지를 강화</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="container vision-grid">
+          <div class="vision-card">
+            <img src="./hero_render/교육_10.jpg" alt="브레인시티 메디스파크 헬스케어 복합타운 조감도" />
+          </div>
+          <div class="vision-copy">
+            <div class="section-kicker">Future Value</div>
+            <h2>메디스파크 비전이 만드는 차별화된 미래가치</h2>
+            <p>
+              메디스파크라는 이름은 단순한 브랜딩이 아니라 의료, 연구, 생활, 미래 산업 흐름을 연결하는 상징입니다.
+              이 스토리는 실거주 수요에는 신뢰를, 미래가치 수요에는 기대감을 제공합니다.
+            </p>
+            <div class="vision-metrics">
+              <div class="vision-metric">
+                <strong>500병상</strong>
+                <span>첨단 스마트 인텔리전트 종합병원 비전</span>
+              </div>
+              <div class="vision-metric">
+                <strong>R&amp;D</strong>
+                <span>의료 연구와 첨단 헬스케어 인프라 확장성</span>
+              </div>
+              <div class="vision-metric">
+                <strong>2028</strong>
+                <span>자료 기준 착공 예정 시점 반영</span>
+              </div>
+              <div class="vision-metric">
+                <strong>2030</strong>
+                <span>자료 기준 개원 예정 시점 반영</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="container">
+          <div class="cta-band">
+            <div>
+              <h3>복잡한 설명보다, 먼저 상담을 받아보는 것이 빠릅니다</h3>
+              <p>
+                방문예약 고객 대상으로 순차 상담을 도와드립니다. 성함과 연락처만 남겨주시면
+                분양 정보, 타입 안내, 일정 조율까지 빠르게 연결해드립니다.
+              </p>
+            </div>
+            <div class="hero-actions">
+              <button class="btn btn-primary open-consult" type="button" data-lead-type="상담신청">상담신청</button>
+              <button class="btn btn-light open-consult" type="button" data-lead-type="방문예약">방문예약</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="container final-grid">
+          <article class="summary-card">
+            <img src="./hero_render/교육_11.jpg" alt="브레인시티 메디스파크 요약 이미지" />
+            <div class="summary-copy">
+              <h3>메디스파크가 지금 더 주목받는 이유</h3>
+              <p>
+                브레인시티 핵심 입지, 생활 밀착형 인프라, 공원형 단지, 메디컬 복합타운 비전까지
+                실거주와 미래가치를 동시에 설명할 수 있는 강한 메시지를 한 흐름으로 구성했습니다.
+              </p>
+              <ul class="summary-list">
+                <li>교육, 병원, 상업, 공원이 가까운 브레인시티 중심 생활권</li>
+                <li>1,215세대 대단지와 남향 위주 배치가 만드는 실거주 상품성</li>
+                <li>메디스파크와 교통 확장 스토리가 결합된 중장기 가치 기대감</li>
+              </ul>
+              <div class="footer-note">
+                ※ 이미지와 내용은 이해를 돕기 위한 자료이며 실제와 다를 수 있습니다.<br />
+                ※ 교통, 의료, 개발 관련 정보는 자료 기준의 예정 사항을 포함하며 향후 변경될 수 있습니다.
+              </div>
+            </div>
+          </article>
+
+          <aside class="final-form-card" id="consult">
+            <div class="final-form-body">
+              <span class="eyebrow">Final Consult</span>
+              <h3>지금 분양 상담과 방문예약을 진행해보세요</h3>
+              <p class="card-copy">
+                읽기 편한 정보와 함께 실제 행동으로 바로 이어질 수 있도록 마지막 CTA를 단순하게 구성했습니다.
+                이름과 연락처만으로도 상담 접수가 가능합니다.
+              </p>
+
+              <form class="lead-form js-lead-form" data-lead-type="상담신청">
+                <div class="field">
+                  <label for="final-name">이름</label>
+                  <input id="final-name" name="name" type="text" placeholder="성함을 입력해주세요" autocomplete="name" maxlength="20" required />
+                </div>
+                <div class="field">
+                  <label for="final-phone">연락처</label>
+                  <input id="final-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="13" placeholder="010-1234-5678" required />
+                </div>
+                <div class="field">
+                  <label for="final-interest">관심 타입</label>
+                  <select id="final-interest" name="interestType">
+                    <option value="">관심 타입 선택</option>
+                    <option value="84A">84A</option>
+                    <option value="84B">84B</option>
+                    <option value="101">101</option>
+                    <option value="미정">아직 미정</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="visit-kind">상담 유형</label>
+                  <select id="visit-kind" name="consultType">
+                    <option value="전화상담">전화상담</option>
+                    <option value="방문예약">방문예약</option>
+                    <option value="문자안내">문자안내</option>
+                  </select>
+                </div>
+                <div class="hp-field" aria-hidden="true">
+                  <label for="final-company">회사명</label>
+                  <input id="final-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+                <label class="agreement">
+                  <input type="checkbox" name="agree" required />
+                  <span>입력하신 정보는 상담 연결 및 분양 안내 목적에 한해 사용됩니다.</span>
+                </label>
+                <button class="btn btn-primary" type="submit">상담신청</button>
+                <div class="status" aria-live="polite"></div>
+              </form>
+
+              <div class="hero-actions">
+                <button class="btn btn-outline open-consult" type="button" data-lead-type="상담신청">상담신청</button>
+                <button class="btn btn-light open-consult" type="button" data-lead-type="방문예약">방문예약</button>
+              </div>
+
+              <div class="micro-note">
+                대표번호 010-4896-1691<br />
+                입력하신 정보는 상담 연결 및 분양 안내 목적에 한해 사용됩니다.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div class="floating-bar">
+      <div class="floating-inner">
+        <button class="btn btn-light open-consult" type="button" data-lead-type="상담신청">상담신청</button>
+        <button class="btn btn-primary open-consult" type="button" data-lead-type="방문예약">방문예약</button>
+      </div>
+    </div>
+
+    <div class="modal" id="consultModal" aria-hidden="true">
+      <div class="modal-card">
+        <button class="modal-close" type="button" id="modalClose" aria-label="닫기">×</button>
+        <span class="eyebrow">Quick Contact</span>
+        <h3 id="modalTitle">간단 접수 후 상담 연결</h3>
+        <p>
+          빠른 상담 연결을 위해 성함과 연락처만 간단히 남겨주세요.
+          입력하신 정보는 상담 연결 외 다른 용도로 사용되지 않습니다.
+        </p>
+        <form class="lead-form js-lead-form" data-lead-type="상담신청">
+          <div class="field">
+            <label for="modal-name">이름</label>
+            <input id="modal-name" name="name" type="text" placeholder="성함을 입력해주세요" autocomplete="name" maxlength="20" required />
+          </div>
+          <div class="field">
+            <label for="modal-phone">연락처</label>
+            <input id="modal-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="13" placeholder="010-1234-5678" required />
+          </div>
+          <div class="hp-field" aria-hidden="true">
+            <label for="modal-company">회사명</label>
+            <input id="modal-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <label class="agreement">
+            <input type="checkbox" name="agree" required />
+            <span>개인정보 수집 및 이용에 동의합니다. 상담 연결을 위한 최소 정보만 수집합니다.</span>
+          </label>
+          <button class="btn btn-primary" type="submit">상담신청</button>
+          <div class="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <script>
+    const PAGE_CONFIG = {
+      scriptUrl: "https://script.google.com/macros/s/AKfycbwKGdDoVi56KsP_QXxOHlRQTIEHty-jrPmsIbbA4aj3RDWHHwUnLkscPekZeZ-4ceU/exec",
+      telNumber: "01048961691",
+      developerName: "장문희",
+      pageName: "메디스파크 랜딩페이지"
+    };
+
+    const consultModal = document.getElementById("consultModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalTitle = document.getElementById("modalTitle");
+    const openConsultButtons = document.querySelectorAll(".open-consult");
+    const unitTabs = document.querySelectorAll(".unit-tab");
+    const unitPanels = document.querySelectorAll(".unit-panel");
+
+    function normalizePhone(value) {
+      return value.replace(/[^\d]/g, "");
+    }
+
+    function normalizeName(value) {
+      return value.replace(/\s+/g, " ").replace(/[<>]/g, "").trim();
+    }
+
+    function inferDeviceType() {
+      return /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? "mobile" : "desktop";
+    }
+
+    function getInflowSource() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("src") || params.get("utm_source") || "direct";
+    }
+
+    function setStatus(form, message, type) {
+      const status = form.querySelector(".status");
+      status.textContent = message;
+      status.style.color = type === "error" ? "#c83c43" : type === "success" ? "#1b6655" : "#173e5b";
+    }
+
+    function openModal(leadType) {
+      consultModal.classList.add("open");
+      consultModal.setAttribute("aria-hidden", "false");
+      const form = consultModal.querySelector("form");
+      const submitButton = form.querySelector('button[type="submit"]');
+      const currentLeadType = leadType || "상담신청";
+      form.dataset.leadType = currentLeadType;
+      if (modalTitle) {
+        modalTitle.textContent = currentLeadType === "방문예약" ? "방문 일정 간편 예약" : "간단 접수 후 상담 연결";
+      }
+      if (submitButton) {
+        submitButton.textContent = currentLeadType;
+      }
+      setStatus(form, "", "info");
+    }
+
+    function closeModal() {
+      consultModal.classList.remove("open");
+      consultModal.setAttribute("aria-hidden", "true");
+    }
+
+    async function sendLead(payload) {
+      if (!PAGE_CONFIG.scriptUrl || PAGE_CONFIG.scriptUrl.includes("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL")) {
+        throw new Error("상담 접수 주소가 아직 설정되지 않았습니다.");
+      }
+
+      const response = await fetch(PAGE_CONFIG.scriptUrl, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+      if (!response.ok || !result.ok) {
+        throw new Error(result.message || "상담 접수에 실패했습니다.");
+      }
+      return result;
+    }
+
+    async function handleLeadSubmit(event) {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const submitButton = form.querySelector('button[type="submit"]');
+      const name = normalizeName(form.querySelector('[name="name"]')?.value || "");
+      const phone = normalizePhone(form.querySelector('[name="phone"]')?.value || "");
+      const agree = form.querySelector('[name="agree"]')?.checked;
+      const company = (form.querySelector('[name="company"]')?.value || "").trim();
+      const leadType = form.dataset.leadType || "상담신청";
+      const interestType = form.querySelector('[name="interestType"]')?.value || "";
+      const consultType = form.querySelector('[name="consultType"]')?.value || (leadType === "방문예약" ? "방문예약" : "전화상담");
+
+      if (company) {
+        setStatus(form, "비정상적인 요청이 감지되었습니다. 다시 시도해주세요.", "error");
+        return;
+      }
+
+      if (!name) {
+        setStatus(form, "이름을 입력해주세요.", "error");
+        return;
+      }
+
+      if (name.length < 2 || name.length > 20) {
+        setStatus(form, "이름은 2자 이상 20자 이하로 입력해주세요.", "error");
+        return;
+      }
+
+      const phoneRegex = /^01[0-9]\d{7,8}$/;
+      if (!phoneRegex.test(phone)) {
+        setStatus(form, "올바른 연락처를 입력해주세요.", "error");
+        return;
+      }
+
+      if (!agree) {
+        setStatus(form, "개인정보 수집 및 이용에 동의해주세요.", "error");
+        return;
+      }
+
+      const payload = {
+        submittedAt: new Date().toISOString(),
+        name,
+        phone,
+        developerName: PAGE_CONFIG.developerName,
+        pageName: PAGE_CONFIG.pageName,
+        leadType,
+        interestType,
+        consultType,
+        inflowSource: getInflowSource(),
+        deviceType: inferDeviceType(),
+        userAgent: navigator.userAgent
+      };
+
+      submitButton.disabled = true;
+      setStatus(form, "상담 신청을 접수하고 있습니다...", "info");
+
+      try {
+        if (!PAGE_CONFIG.scriptUrl || PAGE_CONFIG.scriptUrl.includes("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL")) {
+          setStatus(form, "[테스트 모드] 입력 정보가 확인되었습니다.", "success");
+          return;
+        }
+
+        await sendLead(payload);
+        setStatus(form, "신청이 정상적으로 접수되었습니다. 곧 연락드리겠습니다.", "success");
+      } catch (error) {
+        setStatus(form, error.message || "접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.", "error");
+      } finally {
+        submitButton.disabled = false;
+      }
+    }
+
+    openConsultButtons.forEach((button) => {
+      button.addEventListener("click", () => openModal(button.dataset.leadType));
+    });
+
+    modalClose.addEventListener("click", closeModal);
+
+    consultModal.addEventListener("click", (event) => {
+      if (event.target === consultModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && consultModal.classList.contains("open")) {
+        closeModal();
+      }
+    });
+
+    document.querySelectorAll(".js-lead-form").forEach((form) => {
+      form.addEventListener("submit", handleLeadSubmit);
+    });
+
+    unitTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.unit;
+        unitTabs.forEach((item) => item.classList.toggle("active", item === tab));
+        unitPanels.forEach((panel) => {
+          panel.classList.toggle("active", panel.dataset.panel === target);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

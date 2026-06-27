@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>메디스파크 상담 폼 예시</title>
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --card: #ffffff;
+      --text: #102033;
+      --sub: #5a6b7d;
+      --line: #d8e1ea;
+      --brand: #0d4f8b;
+      --brand-strong: #08365f;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      background: linear-gradient(180deg, #edf5fb 0%, #f8fbfd 100%);
+      color: var(--text);
+    }
+
+    .wrap {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(100%, 460px);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 24px 60px rgba(16, 32, 51, 0.08);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #e8f3ff;
+      color: var(--brand);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 16px 0 8px;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .lead {
+      margin: 0 0 18px;
+      color: var(--sub);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .guide {
+      margin: 0 0 20px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #f6f9fc;
+      color: var(--sub);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: 2px solid rgba(13, 79, 139, 0.12);
+      border-color: var(--brand);
+    }
+
+    .agree {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin: 16px 0 18px;
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .agree input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+    }
+
+    button {
+      width: 100%;
+      height: 56px;
+      border: 0;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-strong) 100%);
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button[disabled] {
+      opacity: 0.7;
+      cursor: wait;
+    }
+
+    .meta {
+      margin-top: 16px;
+      text-align: center;
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .status {
+      min-height: 22px;
+      margin-top: 14px;
+      color: var(--brand);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card">
+      <span class="badge">선착순 동호지정 상담</span>
+      <h1>상담하기</h1>
+      <p class="lead">브레인시티 메디스파크 상담 연결을 원하시면 기본 정보만 간단히 남겨주세요.</p>
+      <p class="guide">빠른 상담 연결을 위해 성함과 연락처만 받고 있습니다. 입력하신 정보는 상담 연결 외 다른 용도로 사용되지 않습니다.</p>
+
+      <form id="leadForm">
+        <div class="field">
+          <label for="name">이름</label>
+          <input id="name" name="name" type="text" placeholder="성함을 입력해주세요" required />
+        </div>
+
+        <div class="field">
+          <label for="phone">연락처</label>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" placeholder="010-1234-5678" required />
+        </div>
+
+        <input type="hidden" name="developerName" value="장문희" />
+        <input type="hidden" name="pageName" value="메디스파크 랜딩페이지" />
+        <input type="hidden" name="leadType" value="상담하기" />
+
+        <label class="agree">
+          <input id="agree" type="checkbox" required />
+          <span>개인정보 수집 및 이용에 동의합니다. 상담 연결을 위한 최소 정보만 수집합니다.</span>
+        </label>
+
+        <button id="submitButton" type="submit">전화 연결하기</button>
+        <div id="status" class="status"></div>
+      </form>
+
+      <div class="meta">
+        대표번호 010-4896-1691<br />
+        개발 담당자 저장값: 장문희
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const scriptUrl = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+    const telNumber = "01048961691";
+    const form = document.getElementById("leadForm");
+    const statusEl = document.getElementById("status");
+    const submitButton = document.getElementById("submitButton");
+
+    function normalizePhone(value) {
+      return value.replace(/[^\d]/g, "");
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const name = form.name.value.trim();
+      const phone = normalizePhone(form.phone.value);
+      const agree = document.getElementById("agree").checked;
+
+      if (!name) {
+        statusEl.textContent = "이름을 입력해주세요.";
+        return;
+      }
+
+      const phoneRegex = /^01[0-9]\d{7,8}$/;
+      if (!phoneRegex.test(phone)) {
+        statusEl.textContent = "올바른 휴대폰 번호(010 등으로 시작하는 10~11자리 숫자)를 입력해주세요.";
+        return;
+      }
+
+      if (!agree) {
+        statusEl.textContent = "개인정보 동의 후 진행해주세요.";
+        return;
+      }
+
+      submitButton.disabled = true;
+      statusEl.textContent = "상담 정보를 접수하고 있습니다...";
+
+      const payload = {
+        name,
+        phone,
+        developerName: form.developerName.value,
+        pageName: form.pageName.value,
+        leadType: form.leadType.value,
+        inflowSource: new URLSearchParams(location.search).get("src") || "direct",
+        deviceType: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "desktop",
+        userAgent: navigator.userAgent
+      };
+
+      try {
+        const response = await fetch(scriptUrl, {
+          method: "POST",
+          mode: "cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.ok) {
+          throw new Error(result.message || "저장에 실패했습니다.");
+        }
+
+        statusEl.textContent = "접수가 완료되었습니다. 전화 연결을 시작합니다.";
+        window.location.href = `tel:${telNumber}`;
+      } catch (error) {
+        statusEl.textContent = "일시적으로 접수가 원활하지 않습니다. 잠시 후 다시 시도해주세요.";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
