@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1200, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
+    body { background: #0b416a; color: white; font-family: "Malgun Gothic", "Noto Sans KR", sans-serif; }
+    .card { position: relative; width: 1200px; height: 630px; overflow: hidden; background: linear-gradient(135deg, #0d5682, #082f52); }
+    .photo { position: absolute; inset: 0 0 0 auto; width: 52%; height: 100%; object-fit: cover; object-position: 100% center; filter: brightness(1.08) saturate(1.05); }
+    .veil { position: absolute; inset: 0; background: linear-gradient(90deg, #0b4c78 0%, #0b4c78 43%, rgba(11,76,120,.96) 51%, rgba(11,76,120,.34) 68%, transparent 82%); }
+    .glow { position: absolute; width: 430px; height: 430px; left: -170px; top: -210px; border-radius: 50%; background: rgba(106,190,232,.3); filter: blur(60px); }
+    .content { position: absolute; z-index: 2; left: 74px; top: 61px; width: 620px; }
+    .mark { display: flex; align-items: center; gap: 15px; color: #f2c974; font-size: 21px; font-weight: 700; letter-spacing: .13em; }
+    .emblem { width: 54px; height: 54px; display: grid; place-items: center; border: 2px solid #f2c974; transform: rotate(45deg); border-radius: 10px; background: rgba(6,39,68,.35); }
+    .emblem span { transform: rotate(-45deg); font-family: Georgia, serif; font-size: 22px; letter-spacing: -.12em; margin-left: -3px; }
+    .eyebrow { margin-top: 62px; color: #ffe0a0; font-family: Georgia, "Malgun Gothic", serif; font-size: 25px; letter-spacing: .12em; }
+    h1 { margin: 20px 0 0; font-family: Georgia, "Batang", serif; font-size: 67px; line-height: 1.12; letter-spacing: -.06em; text-shadow: 0 4px 22px rgba(0,0,0,.2); }
+    h1 strong { display: block; color: #ffd981; font-weight: 700; }
+    h1 span { display: block; color: #fffdf7; font-weight: 700; }
+    .rule { display: flex; align-items: center; gap: 13px; width: 500px; margin: 27px 0 20px; color: #efc46b; }
+    .rule::before, .rule::after { content: ""; height: 1px; flex: 1; background: currentColor; opacity: .75; }
+    .rule i { width: 9px; height: 9px; background: currentColor; transform: rotate(45deg); }
+    .subtitle { font-size: 24px; font-weight: 600; letter-spacing: .01em; color: #f5f7f8; }
+    .badge { position: absolute; z-index: 3; right: 48px; bottom: 38px; padding: 13px 24px; border: 1px solid rgba(255,220,151,.72); border-radius: 999px; background: rgba(7,39,66,.76); color: #ffe0a0; font-size: 17px; font-weight: 700; backdrop-filter: blur(8px); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="photo" src="./hero_render/og-building-source.png" alt="" />
+    <div class="veil"></div>
+    <div class="glow"></div>
+    <section class="content">
+      <div class="mark"><span class="emblem"><span>MS</span></span>MEDISPARK</div>
+      <div class="eyebrow">프리미엄이 일상이 되는 곳</div>
+      <h1><strong>브레인시티</strong><span>메디스파크</span></h1>
+      <div class="rule"><i></i></div>
+      <div class="subtitle">프리미엄 분양 상담 · 방문예약</div>
+    </section>
+    <div class="badge">브레인시티 핵심 입지</div>
+  </main>
+</body>
+</html>
